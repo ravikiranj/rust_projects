@@ -1,0 +1,8 @@
+[package]
+name = "water_trap"
+version = "0.1.0"
+authors = ["Ravikiran Janardhana <ravijan@amazon.com>"]
+
+[dependencies]
+rand = "0.4"
+time = "0.1"

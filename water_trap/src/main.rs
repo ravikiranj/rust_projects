@@ -51,13 +51,6 @@ fn get_random_heights(total_bins: usize, max_bin_height: i32) -> Vec<i32> {
 fn get_heights_from_input_file(inp_file: String) -> Vec<i32> {
     let mut heights: Vec<i32> = Vec::new();
 
-    /*
-    let file = File::open(inp_file);
-    for line in BufReader::new(file).lines() {
-        let num: i32 = line.parse().unwrap();
-        heights.push(num);
-    }
-    */
     let file = File::open(inp_file).unwrap();
     for line in BufReader::new(file).lines() {
         heights.push(line.unwrap().trim().parse::<i32>().unwrap());

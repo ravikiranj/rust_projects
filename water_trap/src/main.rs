@@ -85,8 +85,6 @@ fn main() {
         total_bins = heights.len();
     }
     
-    // Generate heights
-
     let start = PreciseTime::now();
     let result = compute(heights, total_bins);
     let end = PreciseTime::now();

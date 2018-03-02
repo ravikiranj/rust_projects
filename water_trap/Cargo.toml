@@ -6,3 +6,4 @@ authors = ["Ravikiran Janardhana <ravijan@amazon.com>"]
 [dependencies]
 rand = "0.4"
 time = "0.1"
+clap = "2.30.0"

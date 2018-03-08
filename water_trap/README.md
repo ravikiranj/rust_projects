@@ -4,7 +4,7 @@
 * Install [cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
 * Build the program by running `cargo build --release`
 * To run the program using randomized bin heights, execute `./target/release/water_trap`
-* To run the program against a file with bin heights data, execute `./target/release/water_trap <INPUT_FILE_PATH>`
+* To run the program against a file with bin heights data, execute `./target/release/water_trap -i <INPUT_FILE_PATH>`
 
 ### Sample execution
 

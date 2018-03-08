@@ -9,7 +9,7 @@ use clap::{Arg, App};
 use std::fs::File;
 use std::io::{BufRead,BufReader};
 
-fn compute(heights: Vec<i32>, len: usize) -> i32 {
+fn compute(heights: &Vec<i32>, len: usize) -> i32 {
     let mut left_max = 0;
     let mut right_max = 0;
     let mut start = 0;
@@ -17,18 +17,20 @@ fn compute(heights: Vec<i32>, len: usize) -> i32 {
     let mut result = 0;
 
     while start <= end {
-        if heights[start] <= heights[end] {
-            if heights[start] > left_max {
-                left_max = heights[start];
+        let start_height = heights[start];
+        let end_height = heights[start];
+        if start_height <= end_height {
+            if start_height > left_max {
+                left_max = start_height;
             } else {
-                result += left_max - heights[start];
+                result += left_max - start_height;
             }
             start += 1;
         } else {
-            if heights[end] > right_max {
-                right_max = heights[end];
+            if end_height > right_max {
+                right_max = end_height;
             } else {
-                result += right_max - heights[end];
+                result += right_max - end_height;
             }
             end -= 1;
         }
@@ -74,7 +76,7 @@ fn main() {
     let inp_file = matches.value_of("inp").unwrap_or("");
 
     let heights: Vec<i32>;
-    let mut total_bins: usize = 1000000;
+    let mut total_bins: usize = 45000000;
     let max_bin_height = 1000;
 
     if inp_file == "" {
@@ -86,7 +88,7 @@ fn main() {
     }
     
     let start = PreciseTime::now();
-    let result = compute(heights, total_bins);
+    let result = compute(&heights, total_bins);
     let end = PreciseTime::now();
 
     if result < 0 {
